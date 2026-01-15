@@ -9,6 +9,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import HomePage from './pages/HomePage';
 import DetailPage from './pages/DetailPage';
+import LeaderboardPage from './pages/LeaderboardPage';
+import CreateThreadPage from './pages/CreateThreadPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -34,7 +36,9 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/threads/new" element={<CreateThreadPage />} />
       <Route path="/threads/:id" element={<DetailPage />} />
+      <Route path="/leaderboard" element={<LeaderboardPage />} />
     </Routes>
   );
 }
