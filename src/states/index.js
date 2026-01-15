@@ -1,8 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
+import authUserReducer from './authUser/reducer';
+import isPreloadReducer from './isPreload/reducer';
 
 const store = configureStore({
   reducer: {
-    // Reducers akan ditambahkan bertahap
+    authUser: authUserReducer,
+    isPreload: isPreloadReducer,
+    // threads, threadDetail, users, leaderboards akan ditambahkan nanti
   },
 });
 

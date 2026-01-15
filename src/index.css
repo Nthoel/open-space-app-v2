@@ -6,7 +6,7 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #100d38;
+  background: #0f0a2e;
 }
 ::-webkit-scrollbar-thumb {
   background: #3d2d7a;
@@ -21,21 +21,69 @@ body {
   min-height: 100vh;
 }
 
-/* Custom utility classes */
 @layer components {
+  /* Buttons */
   .btn-primary {
-    @apply bg-primary hover:bg-secondary text-text px-4 py-2 rounded-lg transition-colors duration-200;
+    @apply bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg 
+           transition-all duration-200 hover:shadow-glow-primary font-medium;
   }
   
   .btn-secondary {
-    @apply bg-card hover:bg-primary text-text px-4 py-2 rounded-lg border border-border transition-colors duration-200;
+    @apply bg-transparent border border-secondary text-secondary 
+           hover:bg-secondary hover:text-dark-lighter px-4 py-2 rounded-lg 
+           transition-all duration-200;
   }
   
+  .btn-ghost {
+    @apply bg-transparent hover:bg-card text-text px-4 py-2 rounded-lg 
+           transition-colors duration-200;
+  }
+  
+  /* Cards */
   .card {
-    @apply bg-card border border-border rounded-lg p-4;
+    @apply bg-card border border-border rounded-xl p-4 
+           hover:border-border-light transition-colors duration-200;
   }
   
+  .card-interactive {
+    @apply bg-card border border-border rounded-xl p-4 
+           hover:bg-card-hover hover:border-primary/50 
+           transition-all duration-200 cursor-pointer;
+  }
+  
+  /* Inputs */
   .input-field {
-    @apply bg-dark border border-border rounded-lg px-4 py-2 text-text placeholder-text-muted focus:outline-none focus:border-primary transition-colors;
+    @apply bg-dark-lighter border border-border rounded-lg px-4 py-3 
+           text-text placeholder-text-muted w-full
+           focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 
+           transition-all duration-200;
+  }
+  
+  /* Labels & Badges */
+  .badge {
+    @apply px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-soft text-primary;
+  }
+  
+  .badge-secondary {
+    @apply badge bg-secondary/20 text-secondary;
+  }
+  
+  .badge-accent {
+    @apply badge bg-accent/20 text-accent;
+  }
+  
+  /* Category chips (untuk filter) */
+  .category-chip {
+    @apply px-3 py-1 rounded-full text-sm border border-border 
+           hover:border-primary hover:text-primary cursor-pointer
+           transition-colors duration-200;
+  }
+  
+  .category-chip-active {
+    @apply px-3 py-1 rounded-full text-sm bg-primary text-white;
   }
 }
