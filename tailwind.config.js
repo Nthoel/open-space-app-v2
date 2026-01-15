@@ -7,70 +7,72 @@ export default {
   theme: {
     extend: {
       colors: {
-        // === NIGHT SPACE THEME (ENHANCED) ===
+        // Background
+        dark: '#0a0a1a',
+        'dark-lighter': '#12122a',
         
-        // Background Layers
-        dark: '#0f0a2e',           // Background utama (lebih gelap)
-        'dark-lighter': '#1a1442', // Background section alternatif
+        // Surface
+        card: '#1a1a3e',
+        'card-hover': '#252550',
         
-        // Surface (Card, Container, Modal)
-        card: '#231b4d',           // Background card
-        'card-hover': '#2d2460',   // Card hover state
+        // Primary (Purple/Violet)
+        primary: '#a855f7',
+        'primary-hover': '#c084fc',
+        'primary-soft': '#a855f720',
         
-        // Primary Accent (Magenta/Pink - seperti di referensi)
-        primary: '#d946ef',        // Tombol utama, link aktif
-        'primary-hover': '#e879f9', // Hover primary
-        'primary-soft': '#d946ef20', // Background soft untuk highlight
-        
-        // Secondary Accent (Cyan/Teal)
-        secondary: '#22d3ee',      // Accent sekunder
+        // Secondary (Cyan)
+        secondary: '#22d3ee',
         'secondary-hover': '#67e8f9',
         
-        // Tertiary Accent (Orange/Warm)
-        accent: '#fb923c',         // Untuk highlight penting, notification
-        'accent-hover': '#fdba74',
+        // Accent (Pink/Magenta)
+        accent: '#ec4899',
+        'accent-hover': '#f472b6',
         
         // Text
-        text: '#e2d9f3',           // Teks utama (lebih terang)
-        'text-muted': '#9c8bb8',   // Teks secondary
-        'text-dark': '#1a1442',    // Teks di atas background terang
+        text: '#e8e8ff',
+        'text-muted': '#8888aa',
         
-        // Status/Feedback
+        // Status
         success: '#4ade80',
         error: '#f87171',
         warning: '#fbbf24',
-        info: '#60a5fa',
         
-        // Border & Divider
-        border: '#3d2d7a',
-        'border-light': '#5a4cb0',
+        // Border
+        border: '#2a2a5a',
+        'border-light': '#3a3a7a',
         
-        // Vote Colors
+        // Votes
         upvote: '#4ade80',
         downvote: '#f87171',
-        
-        // Gradient stops (untuk background decorative)
-        'gradient-start': '#7c3aed',
-        'gradient-mid': '#db2777',
-        'gradient-end': '#f97316',
+
+        // Category Colors (untuk indicator)
+        'cat-react': '#61dafb',
+        'cat-redux': '#764abc',
+        'cat-javascript': '#f7df1e',
+        'cat-typescript': '#3178c6',
+        'cat-general': '#a855f7',
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
-        // Gradient untuk header/hero section
-        'space-gradient': 'linear-gradient(135deg, #7c3aed 0%, #db2777 50%, #f97316 100%)',
-        'card-gradient': 'linear-gradient(180deg, #231b4d 0%, #1a1442 100%)',
+        'space-gradient': 'radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 50%, #050510 100%)',
+        'card-gradient': 'linear-gradient(135deg, #1a1a3e 0%, #12122a 100%)',
+        'glow-gradient': 'radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%)',
       },
       boxShadow: {
-        'glow-primary': '0 0 20px rgba(217, 70, 239, 0.3)',
-        'glow-secondary': '0 0 20px rgba(34, 211, 238, 0.3)',
-        'glow-accent': '0 0 20px rgba(251, 146, 60, 0.3)',
+        'glow-primary': '0 0 30px rgba(168, 85, 247, 0.3)',
+        'glow-accent': '0 0 30px rgba(236, 72, 153, 0.3)',
+        'glow-secondary': '0 0 20px rgba(34, 211, 238, 0.2)',
+        'card': '0 4px 20px rgba(0, 0, 0, 0.3)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.3s ease-in-out',
-        'slide-up': 'slideUp 0.3s ease-out',
+        'fade-in': 'fadeIn 0.4s ease-out',
+        'slide-up': 'slideUp 0.4s ease-out',
+        'slide-down': 'slideDown 0.3s ease-out',
         'pulse-slow': 'pulse 3s infinite',
+        'twinkle': 'twinkle 4s ease-in-out infinite',
+        'float': 'float 6s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -78,8 +80,20 @@ export default {
           '100%': { opacity: '1' },
         },
         slideUp: {
-          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideDown: {
+          '0%': { opacity: '0', transform: 'translateY(-10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        twinkle: {
+          '0%, 100%': { opacity: '0.3' },
+          '50%': { opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
       },
     },

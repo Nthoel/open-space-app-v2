@@ -2,88 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f0a2e;
+  background: #0a0a1a;
 }
 ::-webkit-scrollbar-thumb {
-  background: #3d2d7a;
-  border-radius: 4px;
+  background: #3a3a7a;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #5a4cb0;
+  background: #5a5a9a;
 }
 
+/* Base styles */
 body {
   @apply bg-dark text-text antialiased;
+  background: radial-gradient(ellipse at top, #1a1a4e 0%, #0a0a1a 50%, #050510 100%);
+  background-attachment: fixed;
   min-height: 100vh;
+}
+
+/* Star twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
 }
 
 @layer components {
   /* Buttons */
   .btn-primary {
-    @apply bg-primary hover:bg-primary-hover text-white px-4 py-2 rounded-lg 
-           transition-all duration-200 hover:shadow-glow-primary font-medium;
+    @apply bg-primary hover:bg-primary-hover text-white font-medium
+           px-5 py-2.5 rounded-full transition-all duration-300 active:scale-95;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  }
+  
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
   }
   
   .btn-secondary {
-    @apply bg-transparent border border-secondary text-secondary 
-           hover:bg-secondary hover:text-dark-lighter px-4 py-2 rounded-lg 
-           transition-all duration-200;
+    @apply bg-transparent border border-primary/50 text-primary
+           hover:bg-primary/10 hover:border-primary
+           px-5 py-2.5 rounded-full transition-all duration-300;
   }
   
   .btn-ghost {
-    @apply bg-transparent hover:bg-card text-text px-4 py-2 rounded-lg 
-           transition-colors duration-200;
+    @apply bg-transparent hover:bg-white/5 text-text-muted hover:text-text
+           px-4 py-2 rounded-full transition-all duration-200;
   }
-  
+
+  .btn-icon {
+    @apply p-2.5 rounded-full hover:bg-white/10 transition-colors duration-200;
+  }
+
   /* Cards */
   .card {
-    @apply bg-card border border-border rounded-xl p-4 
-           hover:border-border-light transition-colors duration-200;
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-5
+           transition-all duration-300;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   }
   
   .card-interactive {
-    @apply bg-card border border-border rounded-xl p-4 
-           hover:bg-card-hover hover:border-primary/50 
+    @apply bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-5
+           hover:border-primary/50 transition-all duration-300 cursor-pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .card-interactive:hover {
+    box-shadow: 0 4px 30px rgba(168, 85, 247, 0.15);
+  }
+
+  /* Inputs */
+  .input-field {
+    @apply bg-dark-lighter/50 border border-border rounded-xl px-4 py-3
+           text-text placeholder-text-muted w-full
+           focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20
+           transition-all duration-200;
+  }
+
+  /* Category chips */
+  .category-chip {
+    @apply px-4 py-2 rounded-full text-sm font-medium border border-border
+           bg-transparent text-text-muted
+           hover:border-primary hover:text-primary hover:bg-primary/10
            transition-all duration-200 cursor-pointer;
   }
   
-  /* Inputs */
-  .input-field {
-    @apply bg-dark-lighter border border-border rounded-lg px-4 py-3 
-           text-text placeholder-text-muted w-full
-           focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 
-           transition-all duration-200;
-  }
-  
-  /* Labels & Badges */
-  .badge {
-    @apply px-3 py-1 rounded-full text-sm font-medium;
-  }
-  
-  .badge-primary {
-    @apply badge bg-primary-soft text-primary;
-  }
-  
-  .badge-secondary {
-    @apply badge bg-secondary/20 text-secondary;
-  }
-  
-  .badge-accent {
-    @apply badge bg-accent/20 text-accent;
-  }
-  
-  /* Category chips (untuk filter) */
-  .category-chip {
-    @apply px-3 py-1 rounded-full text-sm border border-border 
-           hover:border-primary hover:text-primary cursor-pointer
-           transition-colors duration-200;
-  }
-  
   .category-chip-active {
-    @apply px-3 py-1 rounded-full text-sm bg-primary text-white;
+    @apply px-4 py-2 rounded-full text-sm font-medium
+           bg-primary text-white border border-primary;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
   }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-category {
+    @apply badge bg-white/10 text-text border border-white/20;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-black/30 backdrop-blur-md border-b border-white/10;
+  }
+}
+
+/* Hide scrollbar for specific elements */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area untuk notch/home indicator di iPhone */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
 }
