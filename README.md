@@ -1,8 +1,42 @@
-# React + Vite
+# 🚀 Night Space Forum
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplikasi Forum Diskusi dengan tema Night Space, dibangun menggunakan React dan Redux.
 
-Currently, two official plugins are available:
+## ✨ Fitur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔐 Autentikasi (Register & Login)
+- 📝 CRUD Thread & Komentar
+- 👍 Voting System (Upvote/Downvote)
+- 🏆 Leaderboard
+- 🏷️ Filter Kategori
+- 🌙 Night Space Theme
+
+## 🛠️ Tech Stack
+
+- React 18
+- Redux Toolkit
+- React Router DOM
+- Tailwind CSS
+- Vite
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm atau yarn
+
+### Installation
+
+```bash
+# Clone repository
+git clone https://github.com/USERNAME/forum-diskusi-app.git
+
+# Masuk ke folder
+cd forum-diskusi-app
+
+# Install dependencies
+npm install
+
+# Jalankan development server
+npm run dev
