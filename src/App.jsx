@@ -1,22 +1,47 @@
 function App() {
   return (
     <div className="min-h-screen p-8">
-      <h1 className="text-4xl font-bold text-night-100 mb-4">
+      <h1 className="text-4xl font-bold text-text mb-4">
         🚀 Night Space Forum
       </h1>
-      <p className="text-night-100/80 mb-6">
+      <p className="text-text-muted mb-6">
         Selamat datang di forum diskusi bertema luar angkasa!
       </p>
-      <div className="bg-night-800 p-6 rounded-lg border border-night-700">
-        <h2 className="text-xl font-semibold text-night-100 mb-2">
-          Setup Berhasil!
+      
+      {/* Card Test */}
+      <div className="card mb-6">
+        <h2 className="text-xl font-semibold text-text mb-2">
+          Card dengan Class Baru
         </h2>
-        <p className="text-night-100/70">
-          Jika kamu melihat card ini dengan warna ungu, Tailwind &amp; Tema Night Space aktif!
+        <p className="text-text-muted">
+          Sekarang penamaan warna lebih intuitif!
         </p>
-        <button className="mt-4 bg-night-700 hover:bg-night-100 hover:text-night-900 text-night-100 px-4 py-2 rounded transition-colors">
-          Tombol Test
+      </div>
+      
+      {/* Button Test */}
+      <div className="flex gap-4 mb-6">
+        <button className="btn-primary">
+          Primary Button
         </button>
+        <button className="btn-secondary">
+          Secondary Button
+        </button>
+      </div>
+      
+      {/* Input Test */}
+      <input 
+        type="text" 
+        placeholder="Coba ketik sesuatu..." 
+        className="input-field w-full max-w-md mb-6"
+      />
+      
+      {/* Status Colors */}
+      <div className="flex gap-4">
+        <span className="text-success">✓ Success</span>
+        <span className="text-error">✗ Error</span>
+        <span className="text-warning">⚠ Warning</span>
+        <span className="text-upvote">▲ 10</span>
+        <span className="text-downvote">▼ 2</span>
       </div>
     </div>
   );
