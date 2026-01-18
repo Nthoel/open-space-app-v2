@@ -3,8 +3,9 @@ module.exports = {
   env: {
     browser: true,
     es2020: true,
+    'cypress/globals': true,  // Tambahkan ini
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended', 'plugin:storybook/recommended'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'plugin:react/jsx-runtime', 'plugin:react-hooks/recommended', 'plugin:cypress/recommended', 'plugin:storybook/recommended'],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -15,7 +16,7 @@ module.exports = {
       version: '18.2',
     },
   },
-  plugins: ['react-refresh'],
+  plugins: ['react-refresh', 'cypress'],  // Tambahkan 'cypress'
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': [

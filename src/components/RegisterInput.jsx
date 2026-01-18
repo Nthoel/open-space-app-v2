@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { BiUser, BiEnvelope, BiLock } from 'react-icons/bi';
 
 function RegisterInput({ onRegister }) {
   const [name, setName] = useState('');
@@ -20,47 +21,73 @@ function RegisterInput({ onRegister }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Name Input */}
       <div>
-        <label htmlFor="name" className="block text-text-muted text-sm mb-2">
+        <label htmlFor="name" className="block text-sm font-medium text-text-muted mb-2">
           Nama
         </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="Masukkan nama"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="input-field"
-        />
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <BiUser className="text-text-muted" size={20} />
+          </div>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Masukkan nama"
+            className="input-field pl-12"
+            required
+          />
+        </div>
       </div>
+
+      {/* Email Input */}
       <div>
-        <label htmlFor="email" className="block text-text-muted text-sm mb-2">
+        <label htmlFor="email" className="block text-sm font-medium text-text-muted mb-2">
           Email
         </label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Masukkan email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="input-field"
-        />
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <BiEnvelope className="text-text-muted" size={20} />
+          </div>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Masukkan email"
+            className="input-field pl-12"
+            required
+          />
+        </div>
       </div>
+
+      {/* Password Input */}
       <div>
-        <label htmlFor="password" className="block text-text-muted text-sm mb-2">
+        <label htmlFor="password" className="block text-sm font-medium text-text-muted mb-2">
           Password
         </label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Minimal 6 karakter"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="input-field"
-        />
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <BiLock className="text-text-muted" size={20} />
+          </div>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Minimal 6 karakter"
+            className="input-field pl-12"
+            minLength={6}
+            required
+          />
+        </div>
       </div>
-      <button type="submit" className="btn-primary w-full mt-6">
+
+      {/* Submit Button */}
+      <button type="submit" className="btn-primary w-full py-3 text-base font-semibold">
         Daftar
       </button>
     </form>
