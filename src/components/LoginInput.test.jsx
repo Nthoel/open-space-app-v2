@@ -51,13 +51,13 @@ describe('LoginInput component', () => {
     const loginButton = screen.getByRole('button', { name: /masuk/i });
 
     // Action
-    await userEvent.type(emailInput, 'john@example.com');
+    await userEvent.type(emailInput, 'wowo@example.com');
     await userEvent.type(passwordInput, 'password123');
     await userEvent.click(loginButton);
 
     // Assert
     expect(mockOnLogin).toHaveBeenCalledWith({
-      email: 'john@example.com',
+      email: 'wowo@example.com',
       password: 'password123',
     });
   });
