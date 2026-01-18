@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import LoadingBar from 'react-redux-loading-bar';
 
 import { asyncPreloadProcess } from './states/isPreload/action';
 
@@ -32,14 +33,19 @@ function App() {
   }
 
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/register" element={<RegisterPage />} />
-      <Route path="/threads/new" element={<CreateThreadPage />} />
-      <Route path="/threads/:id" element={<DetailPage />} />
-      <Route path="/leaderboard" element={<LeaderboardPage />} />
-    </Routes>
+    <>
+      {/* Loading Bar di top */}
+      <LoadingBar style={{ backgroundColor: '#a855f7', height: '3px' }} />
+      
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/threads/new" element={<CreateThreadPage />} />
+        <Route path="/threads/:id" element={<DetailPage />} />
+        <Route path="/leaderboard" element={<LeaderboardPage />} />
+      </Routes>
+    </>
   );
 }
 

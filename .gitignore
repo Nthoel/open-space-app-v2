@@ -42,3 +42,6 @@ yarn-error.log*
 
 # Setup script (tidak perlu di repo)
 setup-structure.js
+
+*storybook.log
+storybook-static
