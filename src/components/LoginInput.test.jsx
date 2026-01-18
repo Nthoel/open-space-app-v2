@@ -56,7 +56,7 @@ describe('LoginInput component', () => {
     await userEvent.click(loginButton);
 
     // Assert
-    expect().toHaveBeenCalledWith({
+    expect(mockOnLogin).toHaveBeenCalledWith({
       email: 'john@example.com',
       password: 'password123',
     });
